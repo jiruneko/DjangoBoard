@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+{% endblock customcss %}
+
+{% block header %}
+<div class="alert">
+    社内SNS
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    {% for item in object_list %}
+    <div class="success">
+     <p>タイトル：<a href="{% url 'detail' item.pk %}">{{item.title}}</a></p>
+     <p>投稿者：<a>{{item.author}}</a></p>
+     <button><a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">いいね{{item.good}}</a></button>
+     <button><a href="#" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">既読{{item.read}}人</a></button_>
+    </div>
+    {% endfor %}
+    <a href="{% url 'logout' %}">ログアウト</a>
+</div> 
+{% endblock content %}
