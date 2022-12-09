@@ -1,1 +1,1 @@
-# DjangoBoard
+# DjangoBoard(BBS)
